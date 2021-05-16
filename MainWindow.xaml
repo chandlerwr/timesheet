@@ -5,8 +5,184 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:timesheet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Timesheet" Height="500" Width="500" MinWidth="350" MinHeight="400">
     <Grid>
 
+        <!-- overall application layout -->
+        <DockPanel>
+
+            <!-- project selection -->
+            <DockPanel DockPanel.Dock="Top" Height="31">
+
+                <Separator DockPanel.Dock="Bottom" Height="1"/>
+
+                <Label Content="_Project:" 
+                       VerticalAlignment="Center" DockPanel.Dock="Left" 
+                       Target="{Binding ElementName=Project, Mode=OneWay}" 
+                       Margin="5,0,2.5,0" Padding="0,0,0,0"/>
+
+                <Button x:Name="ProjectDelete" Content="&#215;" 
+                        VerticalAlignment="Center" DockPanel.Dock="Right" 
+                        Width="20" Height="20" 
+                        Margin="2.5,0,5,0"/>
+
+                <Button x:Name="ProjectImport" Content="&#x1F817;"
+                        VerticalAlignment="Center" DockPanel.Dock="Right" 
+                        Width="20" Height="20"
+                        Margin="2.5,0,2.5,0"/>
+
+                <Button x:Name="ProjectExport" Content="&#x1F815;" 
+                        VerticalAlignment="Center" DockPanel.Dock="Right" 
+                        Width="20" Height="20" 
+                        Margin="2.5,0,2.5,0"/>
+
+                <Button x:Name="ProjectAdd" Content="+" 
+                        VerticalAlignment="Center" DockPanel.Dock="Right" 
+                        Width="20" Height="20" 
+                        Margin="2.5,0,2.5,0"/>
+
+                <ComboBox x:Name="Project" 
+                          VerticalAlignment="Center" 
+                          Height="20" 
+                          Margin="2.5,0,2.5,0"/>
+
+            </DockPanel>
+
+            <!-- selected items (project/timesheet entry) information -->
+            <StatusBar DockPanel.Dock="Bottom" Height="20"/>
+
+            <!-- selected project information -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- project description and settings -->
+                <GroupBox Header="Project Details" Margin="5,5,2.5,5" Padding="2.5,5,2.5,2.5">
+                    <DockPanel>
+
+                        <Button x:Name="Save" Content="Save" 
+                                HorizontalAlignment="Right" DockPanel.Dock="Bottom" 
+                                Width="40" Height="20"/>
+
+                        <StackPanel>
+
+                            <!-- project description -->
+                            <Label Content="_Description:" 
+                                   Margin="0,2.5,0,2.5" Padding="0,0,0,0"/>
+
+                            <TextBox x:Name="ProjectDescription" 
+                                     Height="150" 
+                                     Margin="0,2.5,0,2.5"/>
+
+                            <!-- project settings -->
+                            <GroupBox Header="Settings" 
+                                      Margin="0,2.5,0,2.5" Padding="2.5,2.5,2.5,2.5">
+                                <StackPanel>
+
+                                    <CheckBox x:Name="TaskbarSetting" Content="Show in taskbar" 
+                                              Margin="0,2.5,0,2.5"/>
+
+                                    <Button x:Name="NameSetting" Content="Rename" 
+                                            Width="50" Height="20" 
+                                            HorizontalAlignment="Left" 
+                                            Margin="0,2.5,0,2.5"/>
+
+                                </StackPanel>
+                            </GroupBox>
+
+                        </StackPanel>
+
+                    </DockPanel>
+                </GroupBox>
+
+                <!-- time sheet -->
+                <DockPanel Grid.Column="1">
+
+                    <DockPanel DockPanel.Dock="Top" Height="30">
+
+                        <Button x:Name="TimesheetDelete" Content="&#215;" 
+                                VerticalAlignment="Center" DockPanel.Dock="Right" 
+                                Width="20" Height="20" 
+                                Margin="2.5,0,5,0"/>
+
+                        <Button x:Name="TimesheetImport" Content="&#x1F817;" 
+                                VerticalAlignment="Center" DockPanel.Dock="Right" 
+                                Width="20" Height="20" 
+                                Margin="2.5,0,2.5,0"/>
+
+                        <Button x:Name="TimesheetExport" Content="&#x1F815;" 
+                                VerticalAlignment="Center" DockPanel.Dock="Right" 
+                                Width="20" Height="20" 
+                                Margin="2.5,0,2.5,0"/>
+
+                        <Button x:Name="TimesheetRecord" Content="&#x23F2;" 
+                                VerticalAlignment="Center" DockPanel.Dock="Right" 
+                                Width="20" Height="20" 
+                                Margin="2.5,0,2.5,0"/>
+
+                        <Label Content="_Timesheet:" 
+                               VerticalAlignment="Center" 
+                               Target="{Binding ElementName=Timesheet, Mode=OneWay}" 
+                               Margin="2.5,0,2.5,0" Padding="0,0,0,0"/>
+
+                    </DockPanel>
+
+                    <ListBox x:Name="Timesheet" 
+                             DockPanel.Dock="Bottom" 
+                             AlternationCount="2" SelectionMode="Extended" 
+                             HorizontalContentAlignment="Stretch" 
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                             Margin="2.5,0,5,5">
+
+                        <!-- make list visually interesting with alternating colors -->
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                                <Style.Triggers>
+                                    <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                        <Setter Property="Background" Value="#19FFFFFF"/>
+                                    </Trigger>
+                                    <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                        <Setter Property="Background" Value="#19000000"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+
+                        <!-- format for displaying timesheet entries -->
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2.5*"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="{Binding Dates}" 
+                                               Grid.Row="0" Grid.Column="0" 
+                                               VerticalAlignment="Center"/>
+
+                                    <TextBlock Text="{Binding Description}" 
+                                               Grid.Row="1" Grid.Column="0"  
+                                               VerticalAlignment="Center" 
+                                               TextWrapping="WrapWithOverflow" 
+                                               Margin="0,0,5,0"/>
+
+                                    <TextBlock Text="{Binding Duration}" 
+                                               Grid.Column="1" Grid.RowSpan="2" 
+                                               VerticalAlignment="Center"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>
