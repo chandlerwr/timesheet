@@ -230,3 +230,7 @@ _Pvt_Extensions
 .fake/
 *.binlog
 /.dotnet
+
+# Github SSH setup
+git.bat
+ssh.config
