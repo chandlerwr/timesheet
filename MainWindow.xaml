@@ -23,27 +23,32 @@
 
                 <Button x:Name="ProjectDelete" Content="&#215;" 
                         VerticalAlignment="Center" DockPanel.Dock="Right" 
-                        Width="20" Height="20" 
+                        Width="20" Height="20"
+                        ToolTip="Delete Project"
                         Margin="2.5,0,5,0"/>
 
                 <Button x:Name="ProjectImport" Content="&#x1F817;"
                         VerticalAlignment="Center" DockPanel.Dock="Right" 
                         Width="20" Height="20"
+                        ToolTip="Import Project"
                         Margin="2.5,0,2.5,0"/>
 
                 <Button x:Name="ProjectExport" Content="&#x1F815;" 
                         VerticalAlignment="Center" DockPanel.Dock="Right" 
-                        Width="20" Height="20" 
+                        Width="20" Height="20"
+                        ToolTip="Export Project"
                         Margin="2.5,0,2.5,0"/>
 
                 <Button x:Name="ProjectAdd" Content="+" 
                         VerticalAlignment="Center" DockPanel.Dock="Right" 
-                        Width="20" Height="20" 
+                        Width="20" Height="20"
+                        ToolTip="New Project"
                         Margin="2.5,0,2.5,0"/>
 
                 <ComboBox x:Name="Project" 
                           VerticalAlignment="Center" 
                           Height="20" 
+                          ToolTip="Select Project"
                           Margin="2.5,0,2.5,0"/>
 
             </DockPanel>
@@ -105,21 +110,25 @@
                         <Button x:Name="TimesheetDelete" Content="&#215;" 
                                 VerticalAlignment="Center" DockPanel.Dock="Right" 
                                 Width="20" Height="20" 
+                                ToolTip="Delete Entry"
                                 Margin="2.5,0,5,0"/>
 
                         <Button x:Name="TimesheetImport" Content="&#x1F817;" 
                                 VerticalAlignment="Center" DockPanel.Dock="Right" 
-                                Width="20" Height="20" 
+                                Width="20" Height="20"
+                                ToolTip="Import Entry"
                                 Margin="2.5,0,2.5,0"/>
 
                         <Button x:Name="TimesheetExport" Content="&#x1F815;" 
                                 VerticalAlignment="Center" DockPanel.Dock="Right" 
-                                Width="20" Height="20" 
+                                Width="20" Height="20"
+                                ToolTip="Export Entry"
                                 Margin="2.5,0,2.5,0"/>
 
                         <Button x:Name="TimesheetRecord" Content="&#x23F2;" 
                                 VerticalAlignment="Center" DockPanel.Dock="Right" 
-                                Width="20" Height="20" 
+                                Width="20" Height="20"
+                                ToolTip="Record Entry"
                                 Margin="2.5,0,2.5,0"/>
 
                         <Label Content="_Timesheet:" 
