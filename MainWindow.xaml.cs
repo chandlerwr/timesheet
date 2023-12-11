@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using timesheet.ViewModel;
 
 namespace timesheet {
 	/// <summary>
@@ -44,12 +45,18 @@ namespace timesheet {
 			});
 
 			Timesheet.ItemsSource = items;
-			System.Diagnostics.Trace.WriteLine(Timesheet.Items[0]);
+			//System.Diagnostics.Trace.WriteLine(Timesheet.Items[0]);
+
+			DataContext = new AppVM();
 
 		}
-	}
 
-	public class Entry {
+        private void ProjectAddClick (object sender, RoutedEventArgs e) {
+			(DataContext as AppVM).NewProject();
+        }
+    }
+
+    public class Entry {
 
 		public EntryTime Start { get; set; } = null;
 		public EntryTime End { get; set; } = null;
