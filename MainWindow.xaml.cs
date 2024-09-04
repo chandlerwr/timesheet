@@ -54,6 +54,10 @@ namespace timesheet {
         private void ProjectAddClick (object sender, RoutedEventArgs e) {
 			(DataContext as AppVM).NewProject();
         }
+
+        private void ProjectDeleteClick (object sender, RoutedEventArgs e) {
+            MessageBox.Show(this, "Are you sure you want to delete this project?", "Delete Project", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+        }
     }
 
     public class Entry {

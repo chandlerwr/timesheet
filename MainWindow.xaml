@@ -27,7 +27,8 @@
                         VerticalAlignment="Center" DockPanel.Dock="Right" 
                         Width="20" Height="20"
                         ToolTip="Delete Project"
-                        Margin="2.5,0,5,0"/>
+                        Margin="2.5,0,5,0"
+                        Click="ProjectDeleteClick"/>
 
                 <Button x:Name="ProjectImport" Content="&#x1F817;"
                         VerticalAlignment="Center" DockPanel.Dock="Right" 
