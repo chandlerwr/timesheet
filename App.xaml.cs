@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace timesheet {
+namespace Timesheet {
 	/// <summary>
 	/// Interaction logic for App.xaml
 	/// </summary>

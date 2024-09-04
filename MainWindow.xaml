@@ -1,10 +1,10 @@
-﻿<Window x:Class="timesheet.MainWindow"
+﻿<Window x:Class="Timesheet.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:timesheet"
-        xmlns:vm="clr-namespace:timesheet.ViewModel"
+        xmlns:local="clr-namespace:Timesheet"
+        xmlns:vm="clr-namespace:Timesheet.ViewModel"
         d:DataContext="{d:DesignInstance vm:AppVM, IsDesignTimeCreatable=True}"
         mc:Ignorable="d"
         Title="Timesheet" Height="500" Width="500" MinWidth="350" MinHeight="400">

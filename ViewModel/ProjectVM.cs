@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace timesheet.ViewModel {
+namespace Timesheet.ViewModel {
 
     /// <summary>
     /// The view-model for a timesheet project.
