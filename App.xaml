@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:Timesheet"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="Height" Value="20"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

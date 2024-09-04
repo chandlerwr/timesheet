@@ -58,6 +58,30 @@ namespace Timesheet {
         private void ProjectDeleteClick (object sender, RoutedEventArgs e) {
             MessageBox.Show(this, "Are you sure you want to delete this project?", "Delete Project", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
         }
+
+        private void ProjectImportClick (object sender, RoutedEventArgs e) {
+			// TODO
+        }
+
+        private void ProjectExportClick (object sender, RoutedEventArgs e) {
+			// TODO
+        }
+
+        private void TimesheetDeleteClick (object sender, RoutedEventArgs e) {
+			// TODO
+        }
+
+        private void TimesheetImportClick (object sender, RoutedEventArgs e) {
+			// TODO
+        }
+
+        private void TimesheetExportClick (object sender, RoutedEventArgs e) {
+			// TODO
+        }
+
+        private void TimesheetRecordClick (object sender, RoutedEventArgs e) {
+			// TODO
+        }
     }
 
     public class Entry {
