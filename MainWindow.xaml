@@ -182,6 +182,7 @@
                         <!-- Make list visually interesting with alternating colors -->
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="{x:Type ListBoxItem}">
+                                <EventSetter Event="MouseDoubleClick" Handler="TimesheetItemMouseDoubleClick"/>
                                 <Style.Triggers>
                                     <Trigger Property="ItemsControl.AlternationIndex" Value="0">
                                         <Setter Property="Background" Value="#19FFFFFF"/>

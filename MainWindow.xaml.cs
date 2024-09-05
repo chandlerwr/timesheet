@@ -52,12 +52,17 @@ namespace Timesheet {
 		}
 
         private void ProjectAddClick (object sender, RoutedEventArgs e) {
-			(DataContext as AppVM).NewProject();
+			//(DataContext as AppVM).NewProject();
+			new ProjectNameDialog().ShowDialog();
         }
 
         private void ProjectDeleteClick (object sender, RoutedEventArgs e) {
-            MessageBox.Show(this, "Are you sure you want to delete this project?", "Delete Project", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
-        }
+			//MessageBox.Show(this, "Are you sure you want to delete this project?", "Delete Project", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+			var dia = new ConfirmDialog {
+				Owner = this
+			};
+			dia.ShowDialog();
+		}
 
         private void ProjectImportClick (object sender, RoutedEventArgs e) {
 			// TODO
@@ -81,6 +86,10 @@ namespace Timesheet {
 
         private void TimesheetRecordClick (object sender, RoutedEventArgs e) {
 			// TODO
+        }
+
+        private void TimesheetItemMouseDoubleClick (object sender, MouseButtonEventArgs e) {
+			(new EntryDetailsDialog() { Owner = this }).Show();
         }
     }
 
